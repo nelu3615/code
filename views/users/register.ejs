@@ -1,0 +1,37 @@
+<%-include('../partial/header')-%>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <img class="logo" src="/images/logo.png" alt="">
+      <h3 class="text-center">
+        Account Register
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control"
+            name="name" value="<%= locals.name || '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control"
+            name="email" value="<%= locals.email || '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+           <!-- value -> keep it in form after an error -->
+            <input type="password" class="form-control"
+            name="password" value="<%= locals.password || '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" class="form-control" 
+            name="password2" value="<%= locals.password2 || '' %>" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </h3>
+    </div>
+  </div>
+</div>
+
+<%-include('../partial/footer')-%>

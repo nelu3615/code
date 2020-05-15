@@ -1,0 +1,87 @@
+<%-include('../partial/header')-%>
+<%if (user) {%>
+<div class=" container">
+  <center>
+<%if (user.role === 'publisher') {%>
+  <div class="card" style="width: fit-content">
+    <div class="card-body">
+      <form action="/" method="POST">
+        <div class="row">
+          <div class="form-group col-md-12">
+            <input type="text" class="form-control" name="author" placeholder="Auhtor Name" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12"">
+            <input type="text" class="form-control" name="book" placeholder="Book Name" required>
+          </div>
+        </div>
+        <button type="submit">Add Your Book</button>
+      </form> 
+    </div>
+  </div>
+  <!-- <div class="card" style="width: fit-content"> -->
+    <div class="card-body" style="width: fit-content">
+      <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+        <input class="form-control mr-sm-2" type="text" name="dsearch" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>  
+  </center>
+  <br>
+  <%if(data.length>0){%>
+    <center>
+    <div style="width:auto; border-style: solid;border-color: black;">
+      <table class="table table-border table-hover">
+        <thead class="bg-warning">
+          <tr>
+            <th>
+                s.no
+            </th>
+            <th>
+                Auhtor
+            </th>
+            <th>
+                Books
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%for(var i=0;i< data.length;i++){%>
+            <tr>
+              <td>
+                  <%=i+1%>
+              </td>
+              <td>
+                <%=data[i].author%>
+              </td>
+              <td>
+                <%=data[i].books%>
+              </td>
+            </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+    </center>
+  <%}%> 
+  <%} else { %>
+    <center>
+      <div class="card" style="width: fit-content;">
+        <div class="card-body">
+          <h2>Login as Publisher to be able to search and add books in our library</h2>
+      </div>
+    </center>
+  <% } %>
+  </div>
+  <%} else {%>
+    <div class=" container">
+      <center>
+      <div class="card" style="width: fit-content;">
+        <div class="card-body">
+          <h2>Login To View Library</h2>
+      </div>
+      </center>
+    </div>
+    <%}%>
+<%-include('../partial/footer')-%>

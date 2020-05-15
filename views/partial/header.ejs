@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Searching</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.css">
+        <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+          <a class="navbar-brand" href="/data/1">Library App</a>
+            <div class="container">
+              <ul class="navbar-nav ml-auto">
+                <%if (user) {%>
+                  <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">
+                      Logout
+                    </a>
+                  </li>
+                <%} else {%>
+                  <li class="nav-item">
+                    <a href="/users/login" class="nav-link">
+                      Login
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/users/register" class="nav-link">
+                      Register
+                    </a>
+                  </li>
+                <%}%>
+              </ul>
+            </div>
+          </div>
+        </nav>

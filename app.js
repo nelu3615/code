@@ -8,7 +8,7 @@ const flash = require('connect-flash');
 const session = require('express-session');   
 
 // Load Keys for DB
-const keys = require('./config/keys');
+const keys = require('./keys/keys');
 //connect to db
 mongoose.connect(keys.mongoURI, {useNewUrlParser:true})
 .then(()=>console.log('connectd to db'))

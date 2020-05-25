@@ -4,6 +4,11 @@ var bookModel =  require('../models/data');
 const User = require('../models/user');
 const { authorize } = require('../middleware/auth');
 
+//Default Route route
+router.get('/', (req, res) => {
+  res.render('users/login');
+});
+
 // default page load
 router.get('/data', async (req,res, next)=>{
   const perPage = 4; // results per page
